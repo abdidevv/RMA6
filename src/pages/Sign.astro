@@ -1,0 +1,144 @@
+---
+import LayoutRegister from "@/layouts/LayoutRegister.astro";
+
+---
+
+<LayoutRegister title="Regístrate">
+    <section>
+        <div>
+            <div class="register-container">
+                <h1 class="register-title">Registrar Cuenta</h1>
+                <form class="register-form">
+                    <div class="register-input-group">
+                        <input class="register-input" type="text" id="nombre" placeholder="" required>
+                        <label class="register-label" for="nombre">Nombre(s)</label>
+                    </div>
+                    <div class="register-input-group">
+                        <input class="register-input" type="text" id="apellido-paterno" placeholder="" required>
+                        <label class="register-label" for="apellido-paterno">Apellido Paterno</label>
+                    </div>
+                    <div class="register-input-group">
+                        <input class="register-input" type="text" id="apellido-materno" placeholder="" required>
+                        <label class="register-label" for="apellido-materno">Apellido Materno</label>
+                    </div>
+                    <div class="register-input-group">
+                        <input class="register-input" type="email" id="email" placeholder="" required>
+                        <label class="register-label" for="email">Correo Electronico</label>
+                    </div>
+                    <div class="register-input-group">
+                        <input class="register-input" type="password" id="password" placeholder="" required>
+                        <label class="register-label" for="password">Contraseña</label>
+                    </div>
+                    <div class="register-input-group">
+                        <input class="register-input" type="password" id="confirm-password" placeholder="" required>
+                        <label class="register-label" for="confirm-password">Confirmar contraseña</label>
+                    </div>
+                    <button id="registroForm" class="register-button" type="submit">Registrarse</button>
+                    <div class="register-Message-Group">
+                        <p>¿Ya tienes una cuenta?<a href="Login" class="register-Message"> Inicia sesión</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</LayoutRegister>
+
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    .register-container{
+        background-color: white;
+        /*padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+        width: 350px;
+        /*display: flex;
+        justify-content: center;*/
+        position: relative;
+    }
+    .register-title{
+        color: #ff3131;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .register-form{
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+    }
+    .register-input-group{
+        position: relative;
+        margin-bottom: 1rem;
+        box-sizing: border-box;
+    }
+    .register-input{
+        width: 17rem;
+        padding: 0.75rem;
+        border: 1px solid #dddfe2;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: 0.2s ease all;
+    }
+    .register-input:focus{
+        outline: none;
+        border-color: #ff3131;
+        box-shadow: 0 0 0 2px rgba(255, 49, 49, 0.2);
+    }
+    .register-label{
+        position: absolute;
+        left: 0.75rem;
+        top: 0.75rem;
+        color: #999;
+        font-size: 1rem;
+        transition: 0.2s ease all;
+        pointer-events: none;
+    }
+    .register-input:focus ~ .register-label,
+    .register-input:not(:placeholder-shown) ~ .register-label{
+        top: -0.5rem;
+        left: 0.5rem;
+        font-size: 0.75rem;
+        color: #ff3131;
+        background-color: white;
+        padding: 0 0.25rem;
+    }
+
+    .register-button{
+            background-color: #ff3131;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 0.75rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    .register-button:hover {
+        background-color: #9b1c1c;
+    }    
+    .register-Message-Group{
+            position: relative;
+            top: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+            text-align: center;
+        }
+
+    .register-Message{
+        color: #ff3131;
+        text-decoration:none;
+    }
+
+    .register-Message:hover{
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>

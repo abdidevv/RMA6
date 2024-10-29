@@ -1,0 +1,109 @@
+---
+import Image from "astro/components/Image.astro";
+
+import Fondo from "../../public/Fondo_v1.svg"
+
+const { title} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/RMA - SVG.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <script src="/src/scripts/registro.js" is:inline></script>
+    <title>{title}</title>
+  </head>
+<body>
+    <div class="overlay-background"></div>
+    
+    <div class="layout2-container">
+        <div class="layout2-image">
+            <Image src={Fondo} alt="Medico con herramienta">
+        </div>
+
+        <div class="layout2-content">
+            <slot /> 
+        </div>
+
+        <a href="/" class="close-button">&times;</a>
+    </div>
+</body>
+</html>
+
+<style>
+    
+    .overlay-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px); 
+        z-index: 1; 
+    }
+
+    .layout2-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        width: 70%;
+        height: 70%;
+        background-color: white;
+        z-index: 2;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+
+    .layout2-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        height: 100%;
+    }
+
+    .layout2-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .layout2-content {
+        flex: 1;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background-color: #ff3131;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+
+    .close-button:hover {
+        background-color: #9b1c1c;
+    }
+</style>
