@@ -1,0 +1,170 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout title="Editar Perfil">
+    <main>
+        <section class="editConten">
+            <h1 class="edit-title">Editar Perfil</h1>
+            <div class="input-group">
+                <label class="edit-label">Nombre(s)</label>
+                <div class="value-group">
+                    <input class="edit-input" type="text"></input>
+                    <button class="save-button" type="submit">Editar</button>
+                </div>
+                <div class="divider"></div>
+            </div>
+            <div class="input-group">
+                <label class="edit-label">Apellido Paterno</label>
+                <div class="value-group">
+                    <input class="edit-input" type="text" id="apellido">Rojo</input>
+                    <label for="apellido">Rojo</label>
+                    <button class="save-button" type="submit">Editar</button>    
+                </div>
+                <div class="divider"></div>
+            </div>
+            <div class="input-group">
+                <label class="edit-label">Apellido Materno</label>
+                <div class="value-group">
+                    <input class="edit-input" type="text">Chavez</input>
+                    <button class="save-button" type="submit">Editar</button>
+                </div>
+                <div class="divider"></div>
+            </div>
+            <div class="input-group">
+                <label class="edit-label">Correo Electrónico</label>
+                <div class="value-group">
+                    <input class="edit-input">correo@example.com</input>
+                    <button class="save-button" type="submit">Editar</button>
+                </div>
+                <div class="divider"></div>
+            </div>
+            <div class="input-group">
+                <label class="edit-label">Contraseña</label>
+                <div class="value-group">
+                    <input class="edit-input">*********</input>
+                    <button class="save-button" type="submit">Editar</button>
+                </div>
+                <div class="divider"></div>
+            </div>
+            <div class="input-group">
+                <label class="edit-label">Plan</label>
+                <div class="value-group">
+                    <p class="example-text">General</p>
+                    <div class="button-group">
+                        <button class="confirm-button" type="submit">Cambiar plan</button>
+                        <button class="save-button" type="submit">Cancelar</button>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<style>
+    .editConten {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5rem;
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        gap: 1.5rem;
+        height: auto; /* Cambiado para permitir que el contenedor crezca según el contenido */
+        color: white;
+    }
+
+    .edit-title {
+        color: #ff3131;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .edit-label {
+        display: block;
+        color: black;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+       /* padding: 2rem;  */
+        font-weight: 600;
+    }
+
+    .input-group {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        text-align: left; /* Alinear el texto a la izquierda */
+    }
+
+    .value-group {
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: .5rem;
+    }
+
+    .divider {
+        height: 1px; /* Espesor de la línea */
+        background-color: #ff3131; /* Color de la línea, igual al del título */
+        margin: 0.5rem 0; /* Espacio arriba y abajo de la línea */
+        width: auto /* Ancho completo del contenedor */
+    }
+
+    .save-button {
+        background-color: #ff3131;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 0.75rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .save-button:hover {
+        background-color: #9b1c1c;
+    }
+    .confirm-button {
+        background-color: white;
+        color: #ff3131;
+        border: solid;
+        border-radius: 6px;
+        padding: 0.75rem;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .confirm-button:hover {
+        background-color: #ff3131;
+        color: white;
+    }
+
+    .button-group {
+        display: flex;
+        gap: 0.2rem;
+    }
+    .example-text {
+        color: black;
+        margin-right: 0rem;
+    }
+    .edit-input-group {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+    .edit-input {
+        width: 17rem;
+        padding: 0.75rem;
+        border: 1px solid #dddfe2;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: 0.2s ease all;
+    }
+    .edit-input:focus {
+        outline: none;
+        border-color: #ff3131;
+        box-shadow: 0 0 0 2px rgba(255, 49, 49, 0.2);
+    }
+</style>
